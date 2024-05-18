@@ -1,0 +1,24 @@
+.header {
+    grid-area: header;
+    background-color: rgb(255, 223, 116);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    .header__nav {
+        display: flex;
+        min-height: 100px;
+        justify-content: space-between;
+        align-items: center;
+        .header__nav_link {
+            padding: 20px;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor:pointer; 
+    /* для навлинков, у которых почему-то пропал поинтер */
+}
