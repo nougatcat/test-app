@@ -1,15 +1,26 @@
+import { getEmployees } from "../api/api"
 
 
 const SET_EMPLOYEES = "employeesPage/SET_EMPLOYEES"
-const SET_TOTAL_USERS_COUNT = 'employeesPage/SET_TOTAL_USERS_COUNT';
-const TOGGLE_IS_FETCHING = 'employeesPage/TOGGLE_IS_FETCHING';
-const TOGGLE_IS_FOLLOWING_PROGRESS = 'employeesPage/TOGGLE_IS_FOLLOWING_PROGRES';
 
 
 let initialState = {
-    employees: [],
-    totalEmployeesCount: 0,
-    isFetching: false
+    employees: []
+    //? пример того, что содержится в json
+    // employees: [
+    //     {
+    //         "id": "1",
+    //         "fullname": "Debug debug",
+    //         "position": "manager",
+    //         "email": "john.smith@example.com"
+    //     },
+    //     {
+    //         "id": "2",
+    //         "fullname": "example example",
+    //         "position": "HR",
+    //         "email": "jane.johnson@example.com"
+    //     }
+    // ]
 }
 
 const employeesReducer = (state = initialState, action) => {
@@ -22,6 +33,18 @@ const employeesReducer = (state = initialState, action) => {
         }
         default:
             return state
+    }
+}
+
+//?Action creator
+export const setEmployees = (employees) => ({ type: SET_EMPLOYEES, employees });
+//?Thunk creator
+export const requestEmployees = () => {
+    return (dispatch) => {
+        getEmployees().then(data => {
+            dispatch(setEmployees(data));
+        });
+        console.log('Debug: requesting employees')
     }
 }
 
