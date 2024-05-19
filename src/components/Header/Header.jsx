@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom"
 import css from './Header.module.css'
-import logo from '../../images/logo192.png'
 
 const Header = (props) => {
     return (

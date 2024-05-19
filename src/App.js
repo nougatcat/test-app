@@ -14,7 +14,7 @@ function App() {
       <div className="app-wrapper-content">
         <Routes> 
           <Route path='*' element={<div><h1>404 NOT FOUND</h1></div>} />
-          <Route path="/" element={<Navigate to="/employees" />} />
+          <Route path="/" element={<Navigate to="/about" />} />
           <Route path="/employees" element={<Employees />} />
           <Route path="/about" element={<About />} />
         </Routes>

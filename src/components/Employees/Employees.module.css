@@ -1,8 +1,7 @@
 .row, .head {
     display: block;
     justify-content: space-between;
-    border-bottom: solid 1px;
-    height: 30px;
+    height: 20px;
     padding:10px;
     .row__id {
         float:left;
@@ -12,20 +11,17 @@
         float:left;
         width: 35%;
     }
-    .row__position {
+    .row__group {
         float: left;
         width: 20%;
     }
 }
 
-.head {
-    background-color: rgb(110, 204, 204);
+.row:nth-child(2n) {
+    background-color: #f2f2f2;
 }
 
 
-/* .head {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: solid 1px;
-} */
+.head {
+    background-color: #e9f1ef;
+}

@@ -11,13 +11,13 @@ let initialState = {
     //     {
     //         "id": "1",
     //         "fullname": "Debug debug",
-    //         "position": "manager",
+    //         "group": "managers",
     //         "email": "john.smith@example.com"
     //     },
     //     {
     //         "id": "2",
     //         "fullname": "example example",
-    //         "position": "HR",
+    //         "group": "HR",
     //         "email": "jane.johnson@example.com"
     //     }
     // ]

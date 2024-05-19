@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import Employee from './Employee'
 import EmployeeSearchForm from './EmployeeSearchForm'
 
-const Employees = React.memo(props => {
+const Employees = (props) => {
 
 
     useEffect(()=>{
@@ -16,8 +16,8 @@ const Employees = React.memo(props => {
     //     const sortedEmployees = props.employees.toSorted((a, b) =>  a.fullname.localeCompare(b.fullname))
     //     return sortedEmployees
     // }
-    // const sortEmployeesByPosition = () => {
-    //     const sortedEmployees = props.employees.toSorted((a, b) =>  a.position.localeCompare(b.position))
+    // const sortEmployeesByGroup = () => {
+    //     const sortedEmployees = props.employees.toSorted((a, b) =>  a.group.localeCompare(b.group))
     //     return sortedEmployees
     // }
     // const sortEmployeesByID = () => {
@@ -25,6 +25,17 @@ const Employees = React.memo(props => {
     //     return sortedEmployees
     // }
 
+    // const find = (search = 'man') => {
+    //     let filteredEmployees = [...props.employees.filter(function (el) {
+    //         for (let field in el) {
+    //             if (el[field].indexOf(search) > -1) {
+    //                 return true;//если нашли хотя бы одно поле содержащее искомую строку, оставляем объект
+    //             }
+    //         }
+    //         return false;
+    //     })]
+    //     return filteredEmployees
+    // }
     
 
     return (
@@ -32,19 +43,24 @@ const Employees = React.memo(props => {
             <EmployeeSearchForm />
             <div className={css.head}>
                 <div className={css.row__id}>ID</div>
-                <div className={css.row__column}>Имя</div>
-                <div className={css.row__column}>Почта</div>
-                <div className={css.row__position}>Группа</div>
+                <div className={css.row__column}>Полное имя</div>
+                <div className={css.row__column}>Электронная почта</div>
+                <div className={css.row__group}>Группа</div>
             </div>
             {
                 props.employees.map(emp => <Employee key={emp.id}
                     id={emp.id} fullname={emp.fullname}
-                    email={emp.email} position={emp.position}/>)
+                    email={emp.email} group={emp.group}/>)
             }
+            {/* {
+                find('Vriska').map(emp => <Employee key={emp.id}
+                    id={emp.id} fullname={emp.fullname}
+                    email={emp.email} group={emp.group}/>)
+            } */}
             {/* {
                 sortEmployeesByFullName().map(emp => <Employee key={emp.id}
                     id={emp.id} fullname={emp.fullname}
-                    email={emp.email} position={emp.position}/>)
+                    email={emp.email} group={emp.group}/>)
             } */}
 
 
@@ -52,7 +68,7 @@ const Employees = React.memo(props => {
 
         </div>        
     )
-})
+}
 
 
 
