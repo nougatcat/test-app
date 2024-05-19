@@ -39,13 +39,11 @@ const employeesReducer = (state = initialState, action) => {
 //?Action creator
 export const setEmployees = (employees) => ({ type: SET_EMPLOYEES, employees });
 //?Thunk creator
-export const requestEmployees = () => {
-    return (dispatch) => {
-        getEmployees().then(data => {
-            dispatch(setEmployees(data));
-        });
-        console.log('Debug: requesting employees')
-    }
+export const requestEmployees = () => async (dispatch) => {
+    const data = await getEmployees()
+    
+    dispatch(setEmployees(data));
+    console.log('Debug: requesting employees')
 }
 
 export default employeesReducer

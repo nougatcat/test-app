@@ -1,6 +1,6 @@
 .header {
     grid-area: header;
-    background-color: rgb(255, 223, 116);
+    background-color: rgb(26, 61, 71);
     height: 50px;
     display: flex;
     align-items: center;
@@ -17,6 +17,10 @@
     }
 }
 
-a {
+a, a:visited {
     text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: rgb(214, 212, 212);
 }
