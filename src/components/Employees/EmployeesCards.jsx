@@ -4,6 +4,7 @@ import userPhoto from '../../images/user.webp'
 const EmployeeCard = (props) => {
     return (
         <div className={css.card}>
+            <div className={css.card__id}>{props.id}</div>
             <div className={css.card__name}>{props.fullname}</div>
             <div><img src={userPhoto} alt="" /></div>
             <div className={css.card__info}>{props.group}</div>
@@ -18,7 +19,7 @@ const EmployeesCards = (props) => {
             {
                 props.employees.map(emp => <EmployeeCard key={emp.id}
                     fullname={emp.fullname}
-                    email={emp.email} group={emp.group} />)
+                    id={emp.id} email={emp.email} group={emp.group} />)
             }
         </div>
     )

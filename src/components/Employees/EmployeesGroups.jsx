@@ -5,13 +5,14 @@ const EmployeeGroup = (props) => {
         <div className={css.group__person}>
             <div><strong>{props.fullname}</strong></div>
             <div className={css.group__person_email}>{props.email}</div>
+            <div className={css.group__person_id}>{props.id}</div>
         </div>
     )
 }
 
 const EmployeesGroups = (props) => {
     const groupSplit = (search = 'Managers') => {
-        var splittedByGroup = props.employees.filter(function (el) {
+        let splittedByGroup = props.employees.filter(function (el) {
             return el.group.indexOf(search) > -1
         });
         return splittedByGroup
@@ -29,7 +30,8 @@ const EmployeesGroups = (props) => {
                 {
                     managersGroup.map(emp => <EmployeeGroup key={emp.id}
                         fullname={emp.fullname}
-                        email={emp.email} />)
+                        email={emp.email}
+                        id={emp.id} />)
                 }
             </div>
             <div className={css.group}>
@@ -37,7 +39,8 @@ const EmployeesGroups = (props) => {
                 {
                     accountantsGroup.map(emp => <EmployeeGroup key={emp.id}
                         fullname={emp.fullname}
-                        email={emp.email} />)
+                        email={emp.email}
+                        id={emp.id} />)
                 }
             </div>
             <div className={css.group}>
@@ -45,7 +48,8 @@ const EmployeesGroups = (props) => {
                 {
                     hrGroup.map(emp => <EmployeeGroup key={emp.id}
                         fullname={emp.fullname}
-                        email={emp.email} />)
+                        email={emp.email}
+                        id={emp.id} />)
                 }
             </div>
             <div className={css.group}>
@@ -53,7 +57,8 @@ const EmployeesGroups = (props) => {
                 {
                     qaGroup.map(emp => <EmployeeGroup key={emp.id}
                         fullname={emp.fullname}
-                        email={emp.email} />)
+                        email={emp.email}
+                        id={emp.id} />)
                 }
             </div>
             <div className={css.group}>
@@ -61,7 +66,8 @@ const EmployeesGroups = (props) => {
                 {
                     unmanagedGroup.map(emp => <EmployeeGroup key={emp.id}
                         fullname={emp.fullname}
-                        email={emp.email} />)
+                        email={emp.email}
+                        id={emp.id} />)
                 }
             </div>
         </div>

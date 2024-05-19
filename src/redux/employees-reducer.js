@@ -11,13 +11,13 @@ let initialState = {
     //? пример того, что содержится в json
     // employees: [
     //     {
-    //         "id": "1",
+    //         "id": 1,
     //         "fullname": "Debug debug",
     //         "group": "managers",
     //         "email": "john.smith@example.com"
     //     },
     //     {
-    //         "id": "2",
+    //         "id": 2,
     //         "fullname": "example example",
     //         "group": "HR",
     //         "email": "jane.johnson@example.com"
