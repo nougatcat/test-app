@@ -5,18 +5,18 @@ const usersSearchFormValidate = (values) => {
     return errors;
 }
 
-const EmployeeSearchForm = (props) => {
+const EmployeesForm = (props) => {
 
     const sortEmployeesByFullName = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) =>  a.fullname.localeCompare(b.fullname))
+        const sortedEmployees = props.employees.toSorted((a, b) => a.fullname.localeCompare(b.fullname))
         return sortedEmployees
     }
     const sortEmployeesByGroup = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) =>  a.group.localeCompare(b.group))
+        const sortedEmployees = props.employees.toSorted((a, b) => a.group.localeCompare(b.group))
         return sortedEmployees
     }
     const sortEmployeesByID = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) =>  a.id.localeCompare(b.id))
+        const sortedEmployees = props.employees.toSorted((a, b) => a.id.localeCompare(b.id))
         return sortedEmployees
     }
     const find = () => {
@@ -45,16 +45,21 @@ const EmployeeSearchForm = (props) => {
     return (
         <div>
             <Formik
-                initialValues={{ term: '', filter: null }}
+                initialValues={{ search: '', filter: null }}
                 validate={usersSearchFormValidate}
                 onSubmit={submit}
             >
                 {({ isSubmitting }) => (
                     <Form>
+                        <Field name='design' as='select'>
+                            <option value="table">Таблица</option>
+                            <option value="cards">Карточки</option>
+                            <option value="groups">Группы</option>
+                        </Field>
                         <Field name='sort' as='select'>
-                            <option value="id">Сортировка по ID</option>
-                            <option value="fullname">Сортировка по имени</option>
-                            <option value="group">Сортировка по группе</option>
+                            <option value="sortId">Сортировка по ID</option>
+                            <option value="sortFullname">Сортировка по имени</option>
+                            <option value="sortGroup">Сортировка по группе</option>
                         </Field>
                         <Field type="text" name="search" />
                         <button type="submit" disabled={isSubmitting}>
@@ -67,4 +72,4 @@ const EmployeeSearchForm = (props) => {
     )
 }
 
-export default EmployeeSearchForm
+export default EmployeesForm

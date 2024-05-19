@@ -1,16 +1,17 @@
-import css from './Employees.module.css'
 import { connect } from 'react-redux'
 import { requestEmployees } from '../../redux/employees-reducer'
 import React, { useEffect } from 'react'
-import Employee from './Employee'
-import EmployeeSearchForm from './EmployeeSearchForm'
-
+import EmployeesForm from './EmployeesForm'
+import EmployeesCards from './EmployeesCards'
+import EmployeesTable from './EmployeesTable'
+import css from './Employees.module.css'
+import EmployeesGroups from './EmployeesGroups'
 const Employees = (props) => {
 
 
-    useEffect(()=>{
+    useEffect(() => {
         props.requestEmployees()
-    },[])
+    }, [])
 
     // const sortEmployeesByFullName = () => {
     //     const sortedEmployees = props.employees.toSorted((a, b) =>  a.fullname.localeCompare(b.fullname))
@@ -36,22 +37,27 @@ const Employees = (props) => {
     //     })]
     //     return filteredEmployees
     // }
-    
+
+
+
 
     return (
         <div>
-            <EmployeeSearchForm />
-            <div className={css.head}>
-                <div className={css.row__id}>ID</div>
-                <div className={css.row__column}>Полное имя</div>
-                <div className={css.row__column}>Электронная почта</div>
-                <div className={css.row__group}>Группа</div>
-            </div>
-            {
-                props.employees.map(emp => <Employee key={emp.id}
-                    id={emp.id} fullname={emp.fullname}
-                    email={emp.email} group={emp.group}/>)
-            }
+            <EmployeesForm />
+
+
+
+
+
+
+            <EmployeesTable employees={props.employees}  />
+            {/* <EmployeesCards employees={props.employees} /> */}
+            {/* <EmployeesGroups employees={props.employees} /> */}
+
+
+
+
+
             {/* {
                 find('Vriska').map(emp => <Employee key={emp.id}
                     id={emp.id} fullname={emp.fullname}
@@ -66,7 +72,7 @@ const Employees = (props) => {
 
 
 
-        </div>        
+        </div>
     )
 }
 
@@ -79,4 +85,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {requestEmployees})(Employees)
+export default connect(mapStateToProps, { requestEmployees })(Employees)

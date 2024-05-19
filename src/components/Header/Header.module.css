@@ -8,9 +8,6 @@
     padding: 20px;
     .header__nav {
         display: flex;
-        min-height: 100px;
-        justify-content: space-between;
-        align-items: center;
         .header__nav_link {
             padding: 20px;
         }

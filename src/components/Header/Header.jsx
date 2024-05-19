@@ -4,7 +4,7 @@ import css from './Header.module.css'
 const Header = (props) => {
     return (
         <header className={css.header}>
-            <div className={css.header__title}>
+            <div>
                 <a href="https://github.com/nougatcat" target="_blank" rel="nooperner noreferrer">Ссылка на мой Github</a>
             </div>
             <nav className={css.header__nav}>
