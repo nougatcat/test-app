@@ -16,8 +16,15 @@
 
 a, a:visited {
     text-decoration: none;
+}
+
+.active {
+    color: #b8f1e3;
+}
+
+.item {
     color: white;
 }
-a:hover{
+.item:hover{
     color: rgb(214, 212, 212);
 }
