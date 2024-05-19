@@ -1,73 +1,59 @@
 import { Field, Form, Formik } from 'formik';
+import css from './Employees.module.css'
 
 const usersSearchFormValidate = (values) => {
     const errors = {};
     return errors;
 }
 
+
 const EmployeesForm = (props) => {
 
-    const sortEmployeesByFullName = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) => a.fullname.localeCompare(b.fullname))
-        return sortedEmployees
+    const submitSearch = (values) => {
+        props.requestEmployees(values.term,values.sort)
     }
-    const sortEmployeesByGroup = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) => a.group.localeCompare(b.group))
-        return sortedEmployees
-    }
-    const sortEmployeesByID = () => {
-        const sortedEmployees = props.employees.toSorted((a, b) => a.id.localeCompare(b.id))
-        return sortedEmployees
-    }
-    const find = () => {
-        let search = "John"
-        let filteredEmployees = [...props.employees.filter(function (el) {
-            for (let field in el) {
-                if (el[field].indexOf(search) > -1) {
-                    return true;//если нашли хотя бы одно поле содержащее искомую строку, оставляем объект
-                }
-            }
-            return false;
-        })]
-        return filteredEmployees
-    }
-
-    const submit = (values, { setSubmitting }) => {
-        const filter = {
-            term: values.term,
-            friend: values.friend === 'null' ? null : values.friend === "true" ? true : false
-        }
-
-        props.onFilterChanged(filter)
-        setSubmitting(false)
+    const submitDesign = (values) => {
+        props.setDesign(values.design)
     }
 
     return (
-        <div>
+        <div className={css.forms}>
             <Formik
-                initialValues={{ search: '', filter: null }}
-                validate={usersSearchFormValidate}
-                onSubmit={submit}
+                initialValues={{ design: 'table' }}
+                onSubmit={submitDesign}
             >
-                {({ isSubmitting }) => (
+                {() => (
                     <Form>
                         <Field name='design' as='select'>
                             <option value="table">Таблица</option>
                             <option value="cards">Карточки</option>
                             <option value="groups">Группы</option>
                         </Field>
+                        <button type="submit">
+                            Изменить
+                        </button>
+                    </Form>
+                )}
+            </Formik>
+
+            <Formik
+                initialValues={{ term: '', sort: ''}}
+                onSubmit={submitSearch}
+            >
+                {() => (
+                    <Form>
                         <Field name='sort' as='select'>
-                            <option value="sortId">Сортировка по ID</option>
-                            <option value="sortFullname">Сортировка по имени</option>
-                            <option value="sortGroup">Сортировка по группе</option>
+                            <option value="id">Сортировка по ID</option>
+                            <option value="fullname">Сортировка по имени</option>
                         </Field>
-                        <Field type="text" name="search" />
-                        <button type="submit" disabled={isSubmitting}>
+                        <Field type="text" name="term" />
+                        <button type="submit">
                             Найти
                         </button>
                     </Form>
                 )}
             </Formik>
+
         </div>
     )
 }

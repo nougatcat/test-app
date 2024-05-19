@@ -1,5 +1,5 @@
 .header {
-    grid-area: header;
+    /* grid-area: header; */
     background-color: rgb(26, 61, 71);
     height: 50px;
     display: flex;

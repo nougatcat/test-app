@@ -1,11 +1,13 @@
 import { getEmployees } from "../api/api"
+import { find, sortArrayByProp } from "../utilities/utilities"
 
 
 const SET_EMPLOYEES = "employeesPage/SET_EMPLOYEES"
+const SET_DESIGN = "employeesPage/SET_DESIGN"
 
 
 let initialState = {
-    employees: []
+    employees: [],
     //? пример того, что содержится в json
     // employees: [
     //     {
@@ -21,6 +23,7 @@ let initialState = {
     //         "email": "jane.johnson@example.com"
     //     }
     // ]
+    design: 'table'
 }
 
 const employeesReducer = (state = initialState, action) => {
@@ -31,18 +34,31 @@ const employeesReducer = (state = initialState, action) => {
                 employees: action.employees
             }
         }
+        case SET_DESIGN: {
+            return {
+                ...state,
+                design: action.design
+            }
+        }
         default:
             return state
     }
 }
 
 //?Action creator
-export const setEmployees = (employees) => ({ type: SET_EMPLOYEES, employees });
+const setEmployees = (employees) => ({ type: SET_EMPLOYEES, employees });
+export const setDesign = (design) => ({type: SET_DESIGN, design})
 //?Thunk creator
-export const requestEmployees = () => async (dispatch) => {
-    const data = await getEmployees()
-    
+export const requestEmployees = (term = '', sort='') => async (dispatch) => {
+    let data = await getEmployees()
+    if (term !== '') {
+        data = find(data,term)
+    }
+    if (sort !== '') {
+        data = sortArrayByProp(data,sort)
+    }
     dispatch(setEmployees(data));
+    
     console.log('Debug: requesting employees')
 }
 

@@ -1,8 +1,8 @@
 .app-wrapper {
-  display: grid;
+  /* display: grid;
   grid-template-areas: 
   "header"
-  "main";
+  "main"; */
 
   max-width: 1200px;
   min-width: 800px;
@@ -11,7 +11,7 @@
 
 
 .app-wrapper-content {
-  grid-area: main;
+  /* grid-area: main; */
   background-color: rgb(255, 255, 255);
   border: 1px solid black;
 }
