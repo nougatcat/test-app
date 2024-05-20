@@ -1,5 +1,5 @@
-import css from './Employees.module.css'
-import userPhoto from '../../images/user.webp'
+import css from '../Employees.module.css'
+import userPhoto from '../../../images/user.webp'
 
 const EmployeeCard = (props) => {
     return (

@@ -1,3 +1,43 @@
 .wrapper {
     padding: 20px;
+    max-width:1000px;
+    margin: 0 auto;
+    color: rgb(43, 43, 43);
+}
+
+.chapter {
+    display: flex;
+}
+.code {
+    white-space: nowrap;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: flex-start;
+    margin-left: 20px;
+    border-radius: 5%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    color: white;
+    background-color: rgb(43, 43, 43);
+    position: relative;
+    .code__tab {
+        padding-left: 25px;
+    }
+    .code__description {
+        position: absolute;
+        bottom: 5px;
+        font: 400 20px sans-serif;
+        color: gray;
+    }
+
+}
+.folder {
+    width: 20px;
+}
+h1 {
+    margin: 0 10px 10px 0;
+    padding: 0;
+}
+.pics {
+    text-align: center;
 }

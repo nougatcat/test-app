@@ -16,12 +16,7 @@ let initialState = {
     //         "group": "managers",
     //         "email": "john.smith@example.com"
     //     },
-    //     {
-    //         "id": 2,
-    //         "fullname": "example example",
-    //         "group": "HR",
-    //         "email": "jane.johnson@example.com"
-    //     }
+    //    ....
     // ]
     design: 'table'
 }

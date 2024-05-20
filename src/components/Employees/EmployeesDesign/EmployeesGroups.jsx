@@ -1,4 +1,4 @@
-import css from './Employees.module.css'
+import css from '../Employees.module.css'
 
 const EmployeeGroup = (props) => {
     return (

@@ -1,5 +1,5 @@
 .row, .head {
-    display: block;
+    /* display: block; */
     justify-content: space-between;
     height: 20px;
     padding:10px;

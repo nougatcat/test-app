@@ -1,20 +1,10 @@
-import { connect } from 'react-redux'
-import { requestEmployees, setDesign } from '../../redux/employees-reducer'
-import React, { useEffect } from 'react'
+import React from 'react'
 import EmployeesForm from './EmployeesForm'
-import EmployeesCards from './EmployeesCards'
-import EmployeesTable from './EmployeesTable'
-import EmployeesGroups from './EmployeesGroups'
+import EmployeesCards from './EmployeesDesign/EmployeesCards'
+import EmployeesTable from './EmployeesDesign/EmployeesTable'
+import EmployeesGroups from './EmployeesDesign/EmployeesGroups'
 
 const Employees = (props) => {
-
-    useEffect(() => {
-        props.requestEmployees()
-    }, [])
-    useEffect(() => {
-    }, [props.employees])
-    useEffect(() => {
-    }, [props.design])
 
     return (
         <div>
@@ -36,11 +26,4 @@ const Employees = (props) => {
     )
 }
 
-let mapStateToProps = (state) => {
-    return {
-        employees: state.employeesPage.employees,
-        design: state.employeesPage.design
-    }
-}
-
-export default connect(mapStateToProps, { requestEmployees, setDesign })(Employees)
+export default Employees
