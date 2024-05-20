@@ -13,10 +13,6 @@
     }
 }
 
-a, a:visited {
-    text-decoration: none;
-}
-
 .active {
     color: #b8f1e3;
 }

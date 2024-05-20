@@ -13,3 +13,10 @@ body {
   font: 400 20px sans-serif;
   background-color: rgb(26, 61, 71);;
 }
+h1 {
+  margin: 0 10px 10px 0;
+  padding: 0;
+}
+a, a:visited {
+  text-decoration: none;
+}
