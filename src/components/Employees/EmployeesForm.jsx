@@ -4,7 +4,7 @@ import css from './Employees.module.css'
 const EmployeesForm = (props) => {
 
     const submitSearch = (values) => {
-        props.requestEmployees(values.term,values.sort)
+        props.requestEmployees(values.term, values.sort)
     }
     const submitDesign = (values) => {
         props.setDesign(values.design)
@@ -34,13 +34,13 @@ const EmployeesForm = (props) => {
 
             <div className={css.forms__form}>
                 <Formik
-                    initialValues={{ term: '', sort: ''}}
+                    initialValues={{ term: '', sort: '' }}
                     onSubmit={submitSearch}
                 >
                     {() => (
                         <Form>
                             <Field name='sort' as='select'>
-                            <option value="">Без сортировки</option>
+                                <option value="">Без сортировки</option>
                                 <option value="id">Сортировка по ID</option>
                                 <option value="fullname">Сортировка по имени</option>
                             </Field>
@@ -51,6 +51,7 @@ const EmployeesForm = (props) => {
                         </Form>
                     )}
                 </Formik>
+                &nbsp;Сортировка применяется после нажатия на кнопку "Найти"
             </div>
 
         </div>

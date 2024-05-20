@@ -12,7 +12,7 @@ export const find = (array, term = 'man') => {
                 if (el[prop] === numberTerm) return true
             }
         }
-        return false;
+        return false
     })
     return filteredArray
 }
@@ -28,9 +28,3 @@ export const sortArrayByProp = (array, prop) => {
     }
     return array
 }
-
-// {
-//     sortEmployeesByFullName().map(emp => <Employee key={emp.id}
-//         id={emp.id} fullname={emp.fullname}
-//         email={emp.email} group={emp.group}/>)
-// }

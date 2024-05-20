@@ -96,8 +96,10 @@
 
 .forms {
     display: flex;
+    padding: 10px;
     justify-content: flex-start;
     .forms__form {
         padding-right:20px;
+        display: flex;
     }
 }

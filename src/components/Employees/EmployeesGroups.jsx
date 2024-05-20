@@ -25,7 +25,7 @@ const EmployeesGroups = (props) => {
 
     return (
         <div className={css.groups}>
-            <div className={css.group}>
+            {managersGroup.length !== 0 && <div className={css.group}>
                 <div className={css.group__title}>Managers</div>
                 {
                     managersGroup.map(emp => <EmployeeGroup key={emp.id}
@@ -33,8 +33,8 @@ const EmployeesGroups = (props) => {
                         email={emp.email}
                         id={emp.id} />)
                 }
-            </div>
-            <div className={css.group}>
+            </div>}
+            {accountantsGroup.length !== 0 && <div className={css.group}>
                 <div className={css.group__title}>Accountants</div>
                 {
                     accountantsGroup.map(emp => <EmployeeGroup key={emp.id}
@@ -42,8 +42,8 @@ const EmployeesGroups = (props) => {
                         email={emp.email}
                         id={emp.id} />)
                 }
-            </div>
-            <div className={css.group}>
+            </div>}
+            {hrGroup.length !== 0 && <div className={css.group}>
                 <div className={css.group__title}>HR</div>
                 {
                     hrGroup.map(emp => <EmployeeGroup key={emp.id}
@@ -51,8 +51,8 @@ const EmployeesGroups = (props) => {
                         email={emp.email}
                         id={emp.id} />)
                 }
-            </div>
-            <div className={css.group}>
+            </div>}
+            {qaGroup.length !== 0 && <div className={css.group}>
                 <div className={css.group__title}>QA</div>
                 {
                     qaGroup.map(emp => <EmployeeGroup key={emp.id}
@@ -60,8 +60,8 @@ const EmployeesGroups = (props) => {
                         email={emp.email}
                         id={emp.id} />)
                 }
-            </div>
-            <div className={css.group}>
+            </div>}
+            {unmanagedGroup.length !== 0 && <div className={css.group}>
                 <div className={css.group__title}>Unmanaged</div>
                 {
                     unmanagedGroup.map(emp => <EmployeeGroup key={emp.id}
@@ -69,7 +69,8 @@ const EmployeesGroups = (props) => {
                         email={emp.email}
                         id={emp.id} />)
                 }
-            </div>
+            </div>}
+            
         </div>
     )
 }
