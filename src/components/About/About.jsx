@@ -9,13 +9,7 @@ const About = (props) => {
     return (
         <div className={css.wrapper}>
             <h1>Что делает это приложение?</h1>
-            <div className={css.chapter}>
-                <div className={css.chapter__text}>
-                    <p>Приложение имеет 2 роута, как и было указано в техническом задании. «Сотрудники» - страница, где выводится список пользователей и «Приветствие» - страница приветствия, которую вы сейчас просматриваете.</p>
-                    <p>Приложение с помощью axios загружает c моего удаленного репозитория json (300 записей ) со списком пользователей, а для случая, если сервер недоступен, я прописал catch, который загрузит локальную копию файла.</p>
-                    <p>Группы: Managers, Accountants, HR, QA, Ungrouped</p>
-                    <p>Я сделал три варианта отображения. Каждый вариант содержит четыре параметра. По умолчанию отрисовывается вариант «Таблица». Выбор осуществляется через взаимодействие с формой.</p>
-                </div>
+            <div>
                 <div className={css.code}>
                     <p>&#123;</p>
                     <p className={css.code__tab}>"id": 1,</p>
@@ -25,12 +19,18 @@ const About = (props) => {
                     <p>&#125;</p>
                     <p className={css.code__description}>Так выглядят данные сотрудника</p>
                 </div>
+                <div>
+                    <p>Приложение имеет 2 роута, как и было указано в техническом задании. «Сотрудники» - страница, где выводится список пользователей и «Приветствие» - страница приветствия, которую вы сейчас просматриваете.</p>
+                    <p>Приложение с помощью axios загружает c моего удаленного репозитория json (300 записей ) со списком пользователей, а для случая, если сервер недоступен, я прописал catch, который загрузит локальную копию файла.</p>
+                    <p>Группы: Managers, Accountants, HR, QA, Ungrouped</p>
+                    <p>Я сделал три варианта отображения. Каждый вариант содержит четыре параметра. По умолчанию отрисовывается вариант «Таблица». Выбор осуществляется через взаимодействие с формой.</p>
+                </div>
             </div>
             <h1>Как сделано это приложение?</h1>
-            <div className={css.chapter}>
-                <div className={css.chapter__text}>
+            <div>
+                <div>
                     <p>Приложение написано на React. Для управления состоянием используется Redux. Для запросов на сервер – Axios. Для работы с формами – Formik.</p>
-                    <p>Я разделил файлы приложения так, что есть отдельно UI (<img src={folderPic} alt="folder" className={css.folder}/> components), BLL (<img src={folderPic} alt="folder" className={css.folder}/> redux) и DAL (<img src={folderPic} alt="folder" className={css.folder}/> api). Функции для поиска и сортировки лежат в <img src={folderPic} alt="folder" className={css.folder}/> utilities.</p>
+                    <p>Я разделил файлы приложения так, что есть отдельно UI (<img src={folderPic} alt="folder" className={css.folder} /> components), BLL (<img src={folderPic} alt="folder" className={css.folder} /> redux) и DAL (<img src={folderPic} alt="folder" className={css.folder} /> api). Функции для поиска и сортировки лежат в <img src={folderPic} alt="folder" className={css.folder} /> utilities.</p>
                     <p>В стейте хранится массив полученных данных сотрудников (employees) и выбранный способ отображения (design). Работа с этими данными реализована через редюсер и Redux</p>
                 </div>
             </div>

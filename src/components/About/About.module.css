@@ -5,17 +5,15 @@
     color: rgb(43, 43, 43);
 }
 
-.chapter {
-    display: flex;
-}
+
 .code {
-    white-space: nowrap;
+    float:right;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     align-items: flex-start;
     margin-left: 20px;
     border-radius: 5%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 20px;
     color: white;
     background-color: rgb(43, 43, 43);
@@ -25,8 +23,9 @@
     }
     .code__description {
         position: absolute;
-        bottom: 5px;
-        font: 400 20px sans-serif;
+        bottom: 0px;
+        right: 20%;
+        font: 400 16px sans-serif;
         color: gray;
     }
 
