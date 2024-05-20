@@ -18,7 +18,6 @@ export const find = (array, term = 'man') => {
 }
 
 export const sortArrayByProp = (array, prop) => {
-    debugger
     if (prop === 'fullname') {
         const sortedArray = array.toSorted((a, b) => a[prop].localeCompare(b[prop]))
         return sortedArray
