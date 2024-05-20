@@ -44,6 +44,20 @@ const EmployeesForm = (props) => {
                                 <option  value="id">Сортировка по ID</option>
                                 <option value="fullname">Сортировка по имени</option>
                             </Field>
+                            <button type="submit">
+                                Применить
+                            </button>
+                        </Form>
+                    )}
+                </Formik>
+            </div>
+            <div className={css.forms__form}>
+                <Formik
+                    initialValues={{ term: '', sort: '' }}
+                    onSubmit={submitSearch}
+                >
+                    {() => (
+                        <Form>
                             <Field placeholder="Пустое поле - сброс" type="text" name="term" />
                             <button type="submit">
                                 Найти
@@ -52,7 +66,6 @@ const EmployeesForm = (props) => {
                     )}
                 </Formik>
             </div>
-            <div>Сортировка применяется после нажатия на кнопку "Найти"</div>
 
         </div>
     )
