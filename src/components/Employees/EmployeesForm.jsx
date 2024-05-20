@@ -25,7 +25,7 @@ const EmployeesForm = (props) => {
                                 <option value="groups">Группы</option>
                             </Field>
                             <button type="submit">
-                                Изменить
+                                Применить
                             </button>
                         </Form>
                     )}
@@ -40,19 +40,19 @@ const EmployeesForm = (props) => {
                     {() => (
                         <Form>
                             <Field name='sort' as='select'>
-                                <option value="">Без сортировки</option>
-                                <option value="id">Сортировка по ID</option>
+                                <option  value="">Без сортировки</option>
+                                <option  value="id">Сортировка по ID</option>
                                 <option value="fullname">Сортировка по имени</option>
                             </Field>
-                            <Field type="text" name="term" />
+                            <Field placeholder="Пустое поле - сброс" type="text" name="term" />
                             <button type="submit">
                                 Найти
                             </button>
                         </Form>
                     )}
                 </Formik>
-                &nbsp;Сортировка применяется после нажатия на кнопку "Найти"
             </div>
+            <div>Сортировка применяется после нажатия на кнопку "Найти"</div>
 
         </div>
     )

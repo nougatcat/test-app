@@ -41,7 +41,7 @@
         padding: 20px;
         background-color: #f0f0f0;
         .card__name {
-            font: 600 20px sans-serif;
+            font: 600 16px sans-serif;
         }
         .card__info {
             padding-top: 10px;

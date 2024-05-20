@@ -59,7 +59,7 @@ export const requestEmployees = (term = '', sort='') => async (dispatch) => {
     }
     dispatch(setEmployees(data));
     
-    console.log('Debug: requesting employees')
+    // console.log('Debug: requesting employees')
 }
 
 export default employeesReducer
