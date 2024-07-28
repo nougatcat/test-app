@@ -12,4 +12,6 @@
 Я разделил файлы приложения так, что есть отдельно UI, BLL и DAL. Функции для поиска и сортировки лежат в utilities. <br>
 В стейте хранится массив полученных данных сотрудников (employees) и выбранный способ отображения (design). Работа с этими данными реализована через редюсер и Redux. <br>
 ![изображение](https://github.com/user-attachments/assets/8c949eea-be50-4a53-8c81-dba8709159e1)
-
+# Видеодемонстрация
+[![Видео](https://github.com/user-attachments/assets/61c5e1b4-b0ed-4774-8ebe-25f754673469)](https://youtu.be/ybQKwgIMCqc)
+https://youtu.be/ybQKwgIMCqc
