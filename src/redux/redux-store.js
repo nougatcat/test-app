@@ -1,12 +1,16 @@
-import { applyMiddleware, combineReducers, legacy_createStore as createStore } from "redux";
+import { combineReducers } from "redux";
 import employeesReducer from "./employees-reducer";
-import { thunk as thunkMiddleware } from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
     employeesPage: employeesReducer,
 })
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware))
+let store = configureStore({
+    reducer: rootReducer
+})
+
+//let store = createStore(reducers, applyMiddleware(thunkMiddleware))
 
 // let store = createStore(reducers, compose(applyMiddleware(thunkMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 

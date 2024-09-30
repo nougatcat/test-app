@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Header from './components/Header/Header';
 import About from './components/About/About';
@@ -8,7 +8,8 @@ import EmployeesContainer from './components/Employees/EmployeesContainer';
 
 function App() {
   return (
-  <BrowserRouter>
+  // <BrowserRouter>
+  <HashRouter basename='/'>
     <div className="app-wrapper">
       <Header />
       <div className="app-wrapper-content">
@@ -20,7 +21,8 @@ function App() {
         </Routes>
       </div>
     </div>
-  </BrowserRouter>
+    </HashRouter>
+  // </BrowserRouter>
 )
 }
 
