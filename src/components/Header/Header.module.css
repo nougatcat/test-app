@@ -5,12 +5,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    .header__nav {
-        display: flex;
-        .header__nav_link {
-            padding: 20px;
-        }
-    }
+}
+
+.header__nav {
+    display: flex;
+
+}
+
+.header__nav_link {
+    padding: 20px;
 }
 
 .active {
@@ -20,6 +23,7 @@
 .item {
     color: white;
 }
-.item:hover{
+
+.item:hover {
     color: rgb(214, 212, 212);
 }
